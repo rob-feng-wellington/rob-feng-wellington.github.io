@@ -1,0 +1,116 @@
+.btn-color-text {
+  background: #ff6a00; }
+
+.btn-color-link {
+  background: #ff6a00; }
+
+.btn-color-warning {
+  background: #ff6a00; }
+
+/* Write your CSS! */
+.block {
+  width: 100px;
+  height: 100px;
+  position: relative; }
+  .block span {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .block.red {
+    background: #e2231a; }
+  .block.orange {
+    background: #ff6a00; }
+  .block.pink {
+    background: #e96baf; }
+  .block.blue {
+    background: #3e8ddd; }
+  .block.cyan {
+    background: #4ac0e0; }
+  .block.green {
+    background: #6abf4a; }
+  .block.dark-gray {
+    background: #6f7170; }
+  .block.gray {
+    background: #c4beb6; }
+  .block.light-gray {
+    background: #d9d8d6; }
+  .block.black {
+    background: #000; }
+
+.show-grid [class^="col-"] {
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+  padding-bottom: 10px;
+  padding-top: 10px; }
+
+h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+h3 {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+h4 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+h5 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+h6 {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; }
+
+.bottom-separator {
+  border-bottom: 2px solid #ccc; }
+  .bottom-separator + div.row {
+    margin-top: 1.25rem; }
+
+.container + .container {
+  margin-top: 1.25rem; }
+
+.pagination > li > span,
+.pagination > li > a {
+  margin-left: 10px; }
+
+.bootstrap-select > .dropdown-toggle {
+  color: #ff6a00;
+  background: #fff;
+  border: 1px solid #d9d8d6; }
+  .bootstrap-select > .dropdown-toggle.bs-placeholder {
+    color: #3e8ddd;
+    background: #fff;
+    border: 1px solid #d9d8d6; }
+.bootstrap-select.open .dropdown-toggle[aria-expanded=true] {
+  color: #fff;
+  background: #ff6a00;
+  border: 1px solid #ff6a00; }
+.bootstrap-select .dropdown-menu {
+  margin-top: -2px; }
+  .bootstrap-select .dropdown-menu > ul > li {
+    border-bottom: 1px solid #d9d8d6; }
+    .bootstrap-select .dropdown-menu > ul > li > a:hover {
+      color: #ff6a00; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles for mobile */ }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles for tablet */ }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  /* Don't forget your Retina CSS! */ }
+
+/*# sourceMappingURL=style.css.map */

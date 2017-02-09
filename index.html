@@ -1,1 +1,861 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <script src='assets/js/jquery-1.12.4.min.js'></script>
+<script src='assets/js/app.js'></script>
+  
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
+  
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/libs/simple-pagination/jquery.simplePagination.js"></script>
+  <script src="assets/js/libs/bootstrap-select/bootstrap-select.js"></script>
+  <link href="assets/css/bootstrap-style.css" rel="stylesheet">
+  <link href="assets/css/core.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <title>Lenovo FDEV Style Guide</title>
+  
+</head>
+
+<body>
+
+
+<!-- <header>
+	<div class="logo">LENOVO STYLE</div>
+	<nav>
+		<ul>
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">ABOUT</a></li>
+		</ul>
+	</nav>
+</header> -->
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Bootstrap theme</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle">Dropdown <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li class="dropdown-header">Nav header</li>
+						<li><a href="#">Separated link</a></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+<main>
+<div class="container">
+  <h2 class="bottom-separator">PARAGRAPH</h2>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus lectus sed felis sagittis, vitae vehicula nisi blandit. Phasellus molestie dolor erat, malesuada elementum libero congue et. Aliquam facilisis sollicitudin augue, eget interdum turpis. Nulla condimentum facilisis malesuada. Aliquam eget libero ex. Sed nec urna a elit laoreet eleifend. Vestibulum tincidunt purus sit amet nisi porttitor pellentesque at non urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id iaculis magna, scelerisque vehicula sem. Ut suscipit neque quis magna varius molestie. Fusce non sem ante.<br/>
+				<br/>
+				Pellentesque at nisl auctor, eleifend lorem at, pharetra quam. Vivamus porta vehicula urna, vel faucibus mi vulputate sed. Ut ullamcorper velit vulputate erat tincidunt, congue imperdiet enim commodo. Aliquam erat volutpat. Aliquam volutpat odio porttitor mollis ultrices. Maecenas facilisis orci sit amet lobortis semper. Maecenas blandit, mauris vel fringilla eleifend, lacus nisi fringilla mauris, eget feugiat sem urna ut eros. Praesent euismod lacus non egestas placerat. Maecenas congue elementum faucibus. Suspendisse faucibus suscipit nisl id aliquam. Vivamus aliquam varius massa, ornare consequat augue suscipit nec. Phasellus ut dolor feugiat, laoreet ex a, lobortis odio. Integer consequat efficitur facilisis. 
+			</p>
+		</div>
+	</div>
+</div>
+<div class="container">
+  <h2 class="bottom-separator">GRID LAYOUT</h2>
+	<div class="row show-grid">
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+		<div class="col-md-1">.col-md-1</div>
+	</div>
+	<div class="row show-grid">
+		<div class="col-md-8">.col-md-8</div>
+		<div class="col-md-4">.col-md-4</div>
+	</div>
+	<div class="row show-grid">
+		<div class="col-md-4">.col-md-4</div>
+		<div class="col-md-4">.col-md-4</div>
+		<div class="col-md-4">.col-md-4</div>
+	</div>
+	<div class="row show-grid">
+		<div class="col-md-6">.col-md-6</div>
+		<div class="col-md-6">.col-md-6</div>
+	</div>
+</div>
+<div class="container">
+  <h2 class="bottom-separator">COLOR</h2>
+  <div class="row">
+    
+    <div class="col-sm-2 col-md-1">
+      <div class="block red">
+        <span>$lenovo-red</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block orange">
+        <span>$lenovo-orange</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block pink">
+        <span>$lenovo-pink</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block blue">
+        <span>$lenovo-blue</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block cyan">
+        <span>$lenovo-cyan</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block green">
+        <span>$lenovo-green</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block dark-gray">
+        <span>$lenovo-dark-gray</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block gray">
+        <span>$lenovo-gray</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block light-gray">
+        <span>$lenovo-light-gray</span>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <div class="block black">
+        <span>$lenovo-black</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="container">
+  <h2 class="bottom-separator">TYPOGRAPHY</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<h1>This is an H1 Header</h1>
+			<h2>This is an H2 Header</h2>
+			<h3>This is an H3 Header</h3>
+			<h4>This is an H4 Header</h4>
+			<h5>This is an H5 Header</h5>
+			<h6>This is an H6 Header</h6>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Primary/Secondary Heading</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+			<h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+			<h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+			<h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+			<h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+			<h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+		</div>
+	</div>
+
+
+	<h2 class="bottom-separator">Text Effects</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+			<p><del>This line of text is meant to be treated as deleted text.</del></p>
+			<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+			<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+			<p><u>This line of text will render as underlined</u></p>
+			<p><small>This line of text is meant to be treated as fine print.</small></p>
+			<p><strong>rendered as bold text</strong></p>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Text Alignment</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<p class="text-left">Left aligned text.</p>
+			<p class="text-center">Center aligned text.</p>
+			<p class="text-right">Right aligned text.</p>
+			<p class="text-justify">Justified text.</p>
+			<p class="text-nowrap">No wrap text.</p>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Case Conversion</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<p class="text-lowercase">Lowercased text.</p>
+			<p class="text-uppercase">Uppercased text.</p>
+			<p class="text-capitalize">Capitalized text.</p>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Attributes and Tooltips</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<p>This word is an <abbr title="attribute">attr</abbr></p>
+			<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
+		</div>
+	</div>
+
+
+	<h2 class="bottom-separator">Address Styling</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<address>
+			  <strong>Twitter, Inc.</strong><br>
+			  1355 Market Street, Suite 900<br>
+			  San Francisco, CA 94103<br>
+			  <abbr title="Phone">P:</abbr> (123) 456-7890
+			</address>
+
+			<address>
+			  <strong>Full Name</strong><br>
+			  <a href="mailto:#">first.last@example.com</a>
+			</address>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h2 class="bottom-separator">LISTS</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<ul> 
+			<li>Lorem ipsum dolor sit amet</li> 
+			<li>Consectetur adipiscing elit</li> 
+			<li>Integer molestie lorem at massa</li> 
+			<li>Facilisis in pretium nisl aliquet</li> 
+			<li>Nulla volutpat aliquam velit 
+				<ul> 
+					<li>Phasellus iaculis neque</li> 
+					<li>Purus sodales ultricies</li> 
+					<li>Vestibulum laoreet porttitor sem</li> 
+					<li>Ac tristique libero volutpat at</li> 
+				</ul> 
+			</li> 
+			<li>Faucibus porta lacus fringilla vel</li> 
+			<li>Aenean sit amet erat nunc</li> 
+			<li>Eget porttitor lorem</li> 
+			</ul>
+		</div>
+	</div>
+
+
+	<h2 class="bottom-separator">Ordered</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<ol>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipiscing elit</li>
+				<li>Integer molestie lorem at massa</li>
+				<li>Facilisis in pretium nisl aliquet</li>
+				<li>Nulla volutpat aliquam velit</li>
+				<li>Faucibus porta lacus fringilla vel</li>
+				<li>Aenean sit amet erat nunc</li>
+				<li>Eget porttitor lorem</li>
+			</ol>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Unstyled</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="list-unstyled">
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipiscing elit</li>
+				<li>Integer molestie lorem at massa</li>
+				<li>Facilisis in pretium nisl aliquet</li>
+				<li>
+					Nulla volutpat aliquam velit
+					<ul>
+						<li>Phasellus iaculis neque</li>
+						<li>Purus sodales ultricies</li>
+						<li>Vestibulum laoreet porttitor sem</li>
+						<li>Ac tristique libero volutpat at</li>
+					</ul>
+				</li>
+				<li>Faucibus porta lacus fringilla vel</li>
+				<li>Aenean sit amet erat nunc</li>
+				<li>Eget porttitor lorem</li>
+			</ul>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Inline</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="list-inline">
+				<li>Lorem ipsum</li>
+				<li>Phasellus iaculis</li>
+				<li>Nulla volutpat</li>
+			</ul>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Descriptions (Vertical)</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<dl>
+				<dt>Description lists</dt>
+				<dd>A description list is perfect for defining terms.</dd>
+				<dt>Euismod</dt>
+				<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+				<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+				<dt>Malesuada porta</dt>
+				<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+			</dl>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Descriptions (Horizontal)</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<dl class="dl-horizontal">
+				<dt>Description lists</dt>
+				<dd>A description list is perfect for defining terms.</dd>
+				<dt>Euismod</dt>
+				<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+				<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+				<dt>Malesuada porta</dt>
+				<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+			</dl>
+		</div>
+	</div>
+
+
+</div>
+<div class="container">
+	<h2 class="bottom-separator">Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<caption>Optional table caption.</caption>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>the Bird</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Striped Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>the Bird</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+
+
+	<h2 class="bottom-separator">Condensed Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Bordered Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Colored Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Column heading</th>
+						<th>Column heading</th>
+						<th>Column heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="active">
+						<th scope="row">1</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="success">
+						<th scope="row">3</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<th scope="row">4</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="info">
+						<th scope="row">5</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<th scope="row">6</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="warning">
+						<th scope="row">7</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<th scope="row">8</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="danger">
+						<th scope="row">9</th>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<h2 class="bottom-separator">Responsive Tables</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Table heading</th>
+							<th>Table heading</th>
+							<th>Table heading</th>
+							<th>Table heading</th>
+							<th>Table heading</th>
+							<th>Table heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+							<td>Table cell</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="container">
+
+<h2 class="bottom-separator">FORMS</h2>
+  <div class="row">
+    <div class="col-md-6">  
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+
+    </div>
+  </div>
+
+  <h2 class="bottom-separator">INLINE FORMS</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="exampleInputName2">Name</label>
+          <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail2">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+        </div>
+        <button type="submit" class="btn btn-default">Send invitation</button>
+      </form>
+    </div>
+  </div>
+
+  <h2 class="bottom-separator">CUSTOM FORMS</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+            <div class="input-group-addon">.00</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Transfer cash</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- Populate buttons here -->
+
+<div class="container">
+	<h2 class="bottom-separator">BUTTONS</h2>
+	<div class="row">
+		<div class="col-md-6">			
+
+			<h6>Normal Buttons:</h6>
+			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+			<!-- Standard button -->
+			<p>
+				<button type="button" class="btn btn-default">Default</button>
+
+				<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+
+				<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+
+				<button type="button" class="btn btn-primary">Primary</button>
+
+				<!-- Indicates a successful or positive action -->
+				<button type="button" class="btn btn-success">Success</button>
+
+				<!-- Contextual button for informational alert messages -->
+				<button type="button" class="btn btn-info">Info</button>
+
+				<!-- Indicates caution should be taken with this action -->
+				<button type="button" class="btn btn-warning">Warning</button>
+
+				<!-- Indicates a dangerous or potentially negative action -->
+				<button type="button" class="btn btn-danger">Danger</button>
+
+				<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+				<button type="button" class="btn btn-link">Link</button>	
+			</p>
+
+
+			<h6>Hollow/Outline Buttons:</h6>
+			<p>
+			  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+			  <button type="button" class="btn btn-default btn-lg">Large button</button>
+			</p>
+			<p>
+			  <button type="button" class="btn btn-primary">Default button</button>
+			  <button type="button" class="btn btn-default">Default button</button>
+			</p>
+			<p>
+			  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+			  <button type="button" class="btn btn-default btn-sm">Small button</button>
+			</p>
+			<p>
+			  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+			  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+			</p>	
+
+
+			<h6>Block/Fluid Buttons:</h6>
+
+			<button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+			<button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+  <h2 class="bottom-separator">PAGINATION</h2>
+  <h6>Library: simple pagination url: <a href="http://flaviusmatis.github.io/simplePagination.js/" target="_blank">http://flaviusmatis.github.io/simplePagination.js/</a></h6>
+  <div class="row">
+    <div class="col-md-12">
+      <nav aria-label="Page navigation">
+        <ul id="pagination" class="pagination"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2 class="bottom-separator">INPUT</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Large input">
+      </div>
+      <br />
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Normal input">
+      </div>
+      <br />
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" placeholder="Small input">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2 class="bottom-separator">DROPDOWN</h2>
+  <h6>Library: bootstrap-select url: <a href="http://silviomoreto.github.io/bootstrap-select/" target="_blank">http://silviomoreto.github.io/bootstrap-select/</a></h6>
+  <div class="row">
+    <div class="col-md-6">
+      <select class="selectpicker" title="Select Something Here">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Relish</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<h2 class="bottom-seperator">HEADER</h2>
+	
+</div>
+</main>
+
+ <br />
+ <br />
+ <br />
+</body>
+
+</html>
